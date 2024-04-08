@@ -33,6 +33,6 @@ public class HomeController {
 
         model.addAttribute("flagUrls", flagUrls);
 
-        return "home";
+        return "index";
     }
 }
