@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>조별리그</title>
+</head>
+<body>
+
+<h3 th:text="${standings.competitionName} + ' Group Stage'">competitionName</h3>
+
+<div id="group-stage"> <!--조별리그-->
+
+    <!--버튼 생성 (tournament)-->
+    <div id="select-button">
+        <a href="/uefaLeague/tournament" class="button">
+            Tournament
+        </a>
+    </div>
+
+
+    <!-- 그룹 데이터 표시 -->
+    <div th:each="group : ${standings.standings}" th:id="${group.group}">
+        <h2 th:text="${group.group}">Group Name</h2>
+        <table>
+            <thead>
+            <tr>
+                <th>Team</th> <!--team.crest , team.name-->
+                <th>Played</th> <!--team.playedGames-->
+                <th>Won</th> <!--team.won-->
+                <th>Draw</th> <!--team.draw-->
+                <th>Lost</th> <!--team.lost-->
+                <th>Points</th> <!--team.points-->
+                <th>Goals For</th> <!--team.goalsFor-->
+                <th>Goals Against</th> <!--team.goalsAgainst-->
+                <th>Goal Difference</th> <!--team.goalDifference-->
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="team : ${group.teams}">
+                <td>
+                    <img th:src="${team.crest}" alt="Crest" style="height: 20px; width: auto;">
+                    <span th:text="${team.name}">Team Name</span>
+                </td>
+                <td th:text="${team.playedGames}">#</td>
+                <td th:text="${team.won}">#</td>
+                <td th:text="${team.draw}">#</td>
+                <td th:text="${team.lost}">#</td>
+                <td th:text="${team.points}">#</td>
+                <td th:text="${team.goalsFor}">#</td>
+                <td th:text="${team.goalsAgainst}">#</td>
+                <td th:text="${team.goalDifference}">#</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div> <!--#id="group-stage"-->
+</body>
+</html>

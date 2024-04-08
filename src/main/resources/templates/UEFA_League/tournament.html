@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>토너먼트</title>
+</head>
+<body>
+
+    <!--버튼 생성 (groupStage)-->
+    <div id="tournament"> <!--토너먼트-->
+
+        <!--버튼 생성 (tournament)-->
+        <div id="select-button">
+            <a href="/uefaLeague/groupStage" class="button">
+                Group Stage
+            </a>
+        </div>
+
+        <h4> LAST 16 </h4>
+            <table class="scoreboard">
+                <thead>
+                <tr>
+                    <th>팀명</th>
+                    <th>1차전</th>
+                    <th>2차전</th>
+                    <th>종합</th>
+                    <th>승부차기</th>
+                </tr>
+                </thead>
+                <tbody>
+                <th:block th:each="match : ${LAST_16}">
+                    <tr>
+                        <td>
+                            <img th:src="${match.homeTeamScore.TeamCrest}" alt="Crest"
+                                 style="height: 20px; width: auto;">
+                            <span th:text="${match.homeTeamScore.TeamName}">Team Name</span>
+                        </td>
+                        <td th:text="${match.homeTeamScore.firstScore}">#</td> <!-- 1st Leg Home Score -->
+                        <td th:text="${match.homeTeamScore.secondScore}">#</td> <!-- 2nd Leg Home Score -->
+                        <td th:text="${match.homeTeamScore.totalScore}">
+                            Total Score
+                        </td>
+                        <td th:text="${(match.homeTeamScore.penalties != 0) && (match.awayTeamScore.penalties != 0) ? match.homeTeamScore.penalties : ' ' }"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img th:src="${match.awayTeamScore.TeamCrest}" alt="Crest"
+                                 style="height: 20px; width: auto;">
+                            <span th:text="${match.awayTeamScore.TeamName}">Team Name</span>
+                        </td>
+                        <td th:text="${match.awayTeamScore.firstScore}">#</td> <!-- 1st Leg Away Score -->
+                        <td th:text="${match.awayTeamScore.secondScore}">#</td> <!-- 2nd Leg Away Score -->
+                        <td th:text="${match.awayTeamScore.totalScore}">
+                            Total Score
+                        </td>
+                        <td th:text="${(match.homeTeamScore.penalties != 0) && (match.awayTeamScore.penalties != 0) ? match.awayTeamScore.penalties : ' ' }"></td>
+                    </tr>
+                    <tr>
+                        <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> <!--줄바꿈-->
+                    </tr>
+                </th:block>
+                </tbody>
+            </table>
+
+
+        <h4> QUARTER_FINALS </h4>
+        <table class="scoreboard">
+            <thead>
+            <tr>
+                <th>팀명</th>
+                <th>1차전</th>
+                <th>2차전</th>
+                <th>종합</th>
+                <th>승부차기</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="match : ${QUARTER_FINALS}">
+                <tr>
+                    <td>
+                        <img th:src="${match.homeTeamScore.TeamCrest}" alt="Crest"
+                             style="height: 20px; width: auto;">
+                        <span th:text="${match.homeTeamScore.TeamName}">Team Name</span>
+                    </td>
+                    <td th:text="${match.homeTeamScore.firstScore}">#</td> <!-- 1st Leg Home Score -->
+                    <td th:text="${match.homeTeamScore.secondScore}">#</td> <!-- 2nd Leg Home Score -->
+                    <td th:text="${match.homeTeamScore.totalScore}">
+                        Total Score
+                    </td>
+                    <td th:text="${(match.homeTeamScore.penalties != 0) && (match.awayTeamScore.penalties != 0) ? match.homeTeamScore.penalties : ' ' }"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img th:src="${match.awayTeamScore.TeamCrest}" alt="Crest"
+                             style="height: 20px; width: auto;">
+                        <span th:text="${match.awayTeamScore.TeamName}">Team Name</span>
+                    </td>
+                    <td th:text="${match.awayTeamScore.firstScore}">#</td> <!-- 1st Leg Away Score -->
+                    <td th:text="${match.awayTeamScore.secondScore}">#</td> <!-- 2nd Leg Away Score -->
+                    <td th:text="${match.awayTeamScore.totalScore}">
+                        Total Score
+                    </td>
+                    <td th:text="${(match.homeTeamScore.penalties != 0) && (match.awayTeamScore.penalties != 0) ? match.awayTeamScore.penalties : ' ' }"></td>
+                </tr>
+                <tr>
+                    <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> <!--줄바꿈-->
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+
+
+        <h4> SEMI_FINALS </h4>
+        <table class="scoreboard">
+            <thead>
+            <tr>
+                <th>팀명</th>
+                <th>1차전</th>
+                <th>2차전</th>
+                <th>종합</th>
+                <th>승부차기</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="match : ${SEMI_FINALS}">
+                <tr>
+                    <td>
+                        <img th:src="${match.homeTeamScore.TeamCrest}" alt="Crest"
+                             style="height: 20px; width: auto;">
+                        <span th:text="${match.homeTeamScore.TeamName}">Team Name</span>
+                    </td>
+                    <td th:text="${match.homeTeamScore.firstScore}">#</td> <!-- 1st Leg Home Score -->
+                    <td th:text="${match.homeTeamScore.secondScore}">#</td> <!-- 2nd Leg Home Score -->
+                    <td th:text="${match.homeTeamScore.totalScore}">
+                        Total Score
+                    </td>
+                    <td th:text="${(match.homeTeamScore.penalties != 0) && (match.awayTeamScore.penalties != 0) ? match.homeTeamScore.penalties : ' ' }"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img th:src="${match.awayTeamScore.TeamCrest}" alt="Crest"
+                             style="height: 20px; width: auto;">
+                        <span th:text="${match.awayTeamScore.TeamName}">Team Name</span>
+                    </td>
+                    <td th:text="${match.awayTeamScore.firstScore}">#</td> <!-- 1st Leg Away Score -->
+                    <td th:text="${match.awayTeamScore.secondScore}">#</td> <!-- 2nd Leg Away Score -->
+                    <td th:text="${match.awayTeamScore.totalScore}">
+                        Total Score
+                    </td>
+                    <td th:text="${(match.homeTeamScore.penalties != 0) && (match.awayTeamScore.penalties != 0) ? match.awayTeamScore.penalties : ' ' }"></td>
+                </tr>
+                <tr>
+                    <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> <!--줄바꿈-->
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+
+
+        <h4> FINAL </h4>
+        <table class="scoreboard">
+            <thead>
+            <tr>
+                <th>팀명</th>
+                <th>1차전</th>
+                <th>2차전</th>
+                <th>종합</th>
+                <th>승부차기</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="match : ${FINAL}">
+                <tr>
+                    <td>
+                        <img th:src="${match.homeTeamScore.TeamCrest}" alt="Crest"
+                             style="height: 20px; width: auto;">
+                        <span th:text="${match.homeTeamScore.TeamName}">Team Name</span>
+                    </td>
+                    <td th:text="${match.homeTeamScore.firstScore}">#</td> <!-- 1st Leg Home Score -->
+                    <td th:text="${match.homeTeamScore.secondScore}">#</td> <!-- 2nd Leg Home Score -->
+                    <td th:text="${match.homeTeamScore.totalScore}">
+                        Total Score
+                    </td>
+                    <td th:text="${(match.homeTeamScore.penalties != 0) && (match.awayTeamScore.penalties != 0) ? match.homeTeamScore.penalties : ' ' }"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <img th:src="${match.awayTeamScore.TeamCrest}" alt="Crest"
+                             style="height: 20px; width: auto;">
+                        <span th:text="${match.awayTeamScore.TeamName}">Team Name</span>
+                    </td>
+                    <td th:text="${match.awayTeamScore.firstScore}">#</td> <!-- 1st Leg Away Score -->
+                    <td th:text="${match.awayTeamScore.secondScore}">#</td> <!-- 2nd Leg Away Score -->
+                    <td th:text="${match.awayTeamScore.totalScore}">
+                        Total Score
+                    </td>
+                    <td th:text="${(match.homeTeamScore.penalties != 0) && (match.awayTeamScore.penalties != 0) ? match.awayTeamScore.penalties : ' ' }"></td>
+                </tr>
+                <tr>
+                    <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td> <!--줄바꿈-->
+                </tr>
+            </th:block>
+            </tbody>
+        </table>
+
+
+    </div>
+
+
+
+</body>
+</html>

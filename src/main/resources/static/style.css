@@ -1,0 +1,127 @@
+.content {
+    display: flex;
+    flex-direction: column; /* 수직 정렬을 위해 방향 변경 */
+    justify-content: flex-start; /* 상단에서부터 내용을 시작 */
+    margin-left: 220px; /* 네비게이션 바 너비 + 조금 더 여백을 주기 위해 */
+}
+.panels-container {
+    display: flex;
+    justify-content: space-between; /* 기존 .content의 스타일을 여기에 적용 */
+}
+.left-panel, .right-panel {
+    flex: 1;
+}
+.table-container {
+    display: flex;
+    justify-content: space-around;
+}
+.table-container > div {
+    flex: 1;
+    padding: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+}
+
+/*네비게이션 바*/
+.nav-bar {
+    position: fixed; /* 사이드바를 화면 왼쪽에 고정 */
+    margin-top: 80px; /* 네비게이션 바의 상단 여백 설정 */
+    top: 0; /* 화면의 상단부터 시작 */
+    left: 0; /* 화면의 왼쪽부터 시작 */
+    width: 200px; /* 내비게이션 바의 너비 */
+    height: 100%; /* 전체 높이 */
+    background-color: #f0f0f0; /* 배경색 */
+    padding: 20px; /* 안쪽 여백 */
+    box-sizing: border-box; /* 패딩을 포함한 박스 모델 적용 */
+}
+.nav-bar button {
+    display: block; /* 버튼을 블록 요소로 만들어 줄바꿈 */
+    width: 80%; /* 부모 요소 대비 버튼의 너비를 줄입니다 */
+    margin: 5px 0; /* 마진으로 버튼 사이 간격을 더 조밀하게 조정 */
+    padding: 5px; /* 버튼 안쪽 여백을 줄입니다 */
+    text-align: left; /* 텍스트를 왼쪽 정렬 */
+}
+.league-button img {
+    width: 30px; /* 이미지의 너비를 30px로 설정 */
+    height: 20px; /* 이미지의 높이를 20px로 설정 */
+    object-fit: cover; /* 이미지의 비율을 유지하면서 영역에 맞게 조정 */
+    margin-right: 10px; /* 이미지와 텍스트 사이의 공간을 추가 */
+}
+
+
+/*헤더*/
+header {
+    height: 50px; /* 헤더의 높이 설정 */
+    background-color: #333; /* 헤더 배경 색상 */
+    color: #fff; /* 헤더 내 텍스트 색상 */
+    padding: 10px 20px; /* 헤더의 패딩 */
+    display: flex; /* 플렉스박스 모델 사용 */
+    justify-content: space-between; /* 주 축(가로 축)의 시작과 끝에 있는 항목 사이에 공간을 균등하게 분배 */
+    align-items: center; /* 교차 축(세로 축)에서 항목들을 가운데 정렬 */
+}
+
+.header-content h1 {
+    margin: 0; /* h1 태그의 마진 제거 */
+}
+
+.season-selection {
+    margin: 0; /* 드롭다운의 외부 여백 제거 */
+}
+
+#season-dropdown {
+    padding: 5px 10px; /* 드롭다운 내부의 패딩 */
+    background-color: #fff; /* 드롭다운 배경 색상 */
+    color: #333; /* 드롭다운 내 텍스트 색상 */
+    border: none; /* 테두리 제거 */
+    cursor: pointer; /* 마우스 오버 시 커서 모양을 포인터로 변경 */
+    border-radius: 5px; /* 모서리를 둥글게 */
+}
+
+.team-info-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.team-squad, .team-matches {
+    flex: 1;
+    margin: 0 20px;
+}
+
+
+#pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#pagination .page-num {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    color: #333;
+    text-decoration: none;
+}
+
+#pagination .page-num:hover {
+    background-color: #f0f0f0;
+}
+
+
+.page-num.active {
+    background-color: #007bff; /* 예시 색상 */
+    color: white;
+    text-decoration: none;
+}
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEFA League Information</title>
+    <style>
+        #groupStage, #tournament {
+            display: none; /* 초기에는 모든 content를 숨깁니다. */
+        }
+    </style>
+</head>
+<body>
+<div>
+    <button id="groupStageBtn">조별리그</button>
+    <button id="tournamentBtn">토너먼트</button>
+
+    <div id="groupStage" class="content">
+        <!-- 조별리그 내용 -->
+        <p>조별리그 내용이 여기에 표시됩니다.</p>
+    </div>
+
+    <div id="tournament" class="content">
+        <!-- 토너먼트 내용 -->
+        <p>토너먼트 내용이 여기에 표시됩니다.</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 여기에 코드 추가
+        document.getElementById('groupStageBtn').addEventListener('click', function() {
+            document.getElementById('groupStage').style.display = 'block';
+            document.getElementById('tournament').style.display = 'none';
+        });
+
+        document.getElementById('tournamentBtn').addEventListener('click', function() {
+            document.getElementById('tournament').style.display = 'block';
+            document.getElementById('groupStage').style.display = 'none';
+        });
+    });
+</script>
+<script src="/main.js"></script>
+</body>
+</html>
