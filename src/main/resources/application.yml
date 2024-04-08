@@ -2,27 +2,10 @@ spring:
   profiles:
     include: SECRET-KEY
 
-  #  datasource:
-#    url: jdbc:h2:tcp://localhost/~/footballinfo
-#    username: sa
-#    password:
-#    driver-class-name: org.h2.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: create
-    properties:
-      hibernate:
-        # show_sql: true
-        format_sql: true
-        use_sql_comments: true
-
   cache:
     type: caffeine
     caffeine:
       spec: maximumSize=100, expireAfterWrite=60s
 
-
 logging.level:
   org.hibernate.SQL: debug
-# org.hibernate.type: trace
