@@ -22,7 +22,6 @@ public class LeagueScorersController {
 
     private final ApiResponse apiResponse;
 
-
     // ============ 득점자 순위표 ============
 
     /**
